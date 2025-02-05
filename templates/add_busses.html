@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Edit bus</title>
+    <style>
+        body{
+            font-family: 'Lato', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: url(static/image/1_bus_main.jpg);
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+        #label-mob-number{
+            font-size: medium;
+        }
+        .main::-webkit-scrollbar {
+            display: none;
+          }
+           .main {
+            margin-top: 600px;
+            padding: 20px;
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background-color:#baadefa9 ;
+            border-radius: 20px;
+            overflow:auto;
+           }
+        #label-login{
+            font-style:normal;
+            font-weight: 600;
+            color: #0a040476;
+        }
+        
+        .div1{
+            justify-content: center;
+            display: flex;
+            padding: 10px;
+            border-top-right-radius: 20px;
+            border-top-left-radius: 20px;
+        
+        }
+        
+        .strip-div{
+            justify-content: center;
+            display:flex;
+            box-shadow: 0px 0px 2px ;
+            margin-top: 20px;
+            width: 400px;
+            height: 30px;
+            background-color: aliceblue;
+            border-radius: 20px;
+        }
+        .label-input-div{
+            margin-top: 45px;
+        }
+        #more-signin-label{
+            color: #0a040476;
+            font-size: small;
+            
+        
+        }
+        .more-signin-div{
+            justify-content: center;
+            display: flex;
+            
+        
+        }
+        #button{
+            background-color:#836fd3;
+            color: white;
+        }
+        #button:hover{
+            background-color: #d9d3f0;
+        }
+        #button:active{
+            background-color: #baadefa9;
+            color: white;
+        }
+        
+        
+        
+
+    </style>
+</head>
+<body>
+    <div class="main">
+        
+        <div class ="div1">
+            <div class="strip-div">
+                <label id="label-login" style="margin-top: 8px;
+                ">ADD A NEW BUS</label>
+            </div>
+            
+        </div>
+
+        <form action="/added_new_bus" method="POST">
+       
+           <div class="label-input-div">
+            <label id="label-mob-number" style="margin-left:46px ;
+            color: rgba(0, 0, 0, 0.642);
+            ">Bus Number</label>
+            <br>
+            <input name="busnumber" required type="text" placeholder="Enter Bus Number (eg. UP01AB2345)" style="
+            border:none;
+            outline:0;
+            width:80%;
+            padding-left:10px;
+            margin-top:2px;
+            border-radius:3px;
+            height: 30px;
+            margin-left: 45px;
+            color: rgba(0, 0, 0, 0.642)">
+            <br>
+            <br>
+            <label id="label-mob-number" style="margin-left:46px ;
+            color: rgba(0, 0, 0, 0.642);
+            ">Bus Name</label>
+            <br>
+            <input name="busname" required type="text" placeholder="Enter Bus Name" style="
+            border:none;
+            outline:0;
+            width:80%;
+            padding-left:10px;
+            margin-top:2px;
+            border-radius:3px;
+            height: 30px;
+            margin-left: 45px;
+            color: rgba(0, 0, 0, 0.642)">
+            <br>
+            <br>
+            <label id="label-mob-number" style="margin-left:46px ;
+            color: rgba(0, 0, 0, 0.642);
+            ">Bus Type</label>
+            <br>
+            <div style="display: flex;">
+            <input required  value="ac" type="radio" name="bustype" placeholder="Enter Bus Type" style="
+            border:none;
+            outline:0;
+            width: 30px;
+            padding-left:10px;
+            margin-top:2px;
+            border-radius:3px;
+            height: 30px;
+            margin-left: 45px;
+            color: rgba(0, 0, 0, 0.642)"> <label style="margin:auto; margin-left:10px; margin-right: 20px" > AC</label>
+            <input  required value="non-ac" type="radio"  name="bustype" style="
+            border:none;
+            outline:0;
+            width:30px;
+            padding-left:10px;
+            margin-top:2px;
+            border-radius:3px;
+            height: 30px;
+            margin-left: 45px;
+            color: rgba(0, 0, 0, 0.642)"> <label style="margin:auto; margin-left:10px">Non AC</label>
+        </div>
+            <br>
+            <label id="label-mob-number" style="margin-left:46px ;
+            color: rgba(0, 0, 0, 0.642);
+            ">Bus Time</label>
+            <br>
+            <input name="bustime" required type="time"  style="
+            border:none;
+            outline:0;
+            width:80%;
+            padding-left:10px;
+            margin-top:2px;
+            border-radius:3px;
+            height: 30px;
+            margin-left: 45px;
+            color: rgba(0, 0, 0, 0.642)">
+            <br>
+            <br>
+            <label id="label-mob-number" style="margin-left:46px ;
+            color: rgba(0, 0, 0, 0.642);
+            ">Bus Source </label>
+            <br>
+            <input name="bussource" required type="text" placeholder="Enter Source" style="
+            border:none;
+            outline:0;
+            width:80%;
+            padding-left:10px;
+            margin-top:2px;
+            border-radius:3px;
+            height: 30px;
+            margin-left: 45px;
+            color: rgba(0, 0, 0, 0.642)">
+            <br>
+            <br>
+            <label id="label-mob-number" style="margin-left:46px ;
+            color: rgba(0, 0, 0, 0.642);
+            ">Bus Destination</label>
+            <br>
+            <input name="busdestination" required type="text" placeholder="Enter Destination" style="
+            border:none;
+            outline:0;
+            width:80%;
+            padding-left:10px;
+            margin-top:2px;
+            border-radius:3px;
+            height: 30px;
+            margin-left: 45px;
+            color: rgba(0, 0, 0, 0.642)">
+            <br>
+            <br>
+            <label id="label-mob-number" style="margin-left:46px ;
+            color: rgba(0, 0, 0, 0.642);
+            ">Bus Distance</label>
+            <br>
+            <input name="busdistance" required type="number" placeholder="Enter Distance" style="
+            border:none;
+            outline:0;
+            width:80%;
+            padding-left:10px;
+            margin-top:2px;
+            border-radius:3px;
+            height: 30px;
+            margin-left: 45px;
+            color: rgba(0, 0, 0, 0.642)">
+            <br>
+            <br>
+            <label id="label-mob-number" style="margin-left:46px ;
+            color: rgba(0, 0, 0, 0.642);
+            ">Bus Duration</label>
+            <br>
+            <input name="busduration" required type="time"  style="
+            border:none;
+            outline:0;
+            width:80%;
+            padding-left:10px;
+            margin-top:2px;
+            border-radius:3px;
+            height: 30px;
+            margin-left: 45px;
+            color: rgba(0, 0, 0, 0.642)">
+            <br>
+            <br>
+            <label id="label-mob-number" style="margin-left:46px ;
+            color: rgba(0, 0, 0, 0.642);
+            ">Bus Fare</label>
+            <br>
+            <input name="busfare" required type="number" placeholder="Enter Fare in Rs." style="
+            border:none;
+            outline:0;
+            width:80%;
+            padding-left:10px;
+            margin-top:2px;
+            border-radius:3px;
+            height: 30px;
+            margin-left: 45px;
+            color: rgba(0, 0, 0, 0.642)">
+            <br>
+            <br>
+            <label  id="label-mob-number" style="margin-left:46px ;
+            color: rgba(0, 0, 0, 0.642);
+            ">Bus Pickup Place</label>
+            <br>
+            <input name="buspickupplace" required type="text" placeholder="Enter Pick-up Place" style="
+            border:none;
+            outline:0;
+            width:80%;
+            padding-left:10px;
+            margin-top:2px;
+            border-radius:3px;
+            height: 30px;
+            margin-left: 45px;
+            color: rgba(0, 0, 0, 0.642)">
+            <br>
+            <br>
+            <label id="label-mob-number" style="margin-left:46px ;
+            color: rgba(0, 0, 0, 0.642);
+            ">Bus Pickup Time</label>
+            <br>
+            <input name="buspickuptime" required type="time"  style="
+            border:none;
+            outline:0;
+            width:80%;
+            padding-left:10px;
+            margin-top:2px;
+            border-radius:3px;
+            height: 30px;
+            margin-left: 45px;
+            color: rgba(0, 0, 0, 0.642)">
+            <br>
+            <br>
+            <label id="label-mob-number" style="margin-left:46px ;
+            color: rgba(0, 0, 0, 0.642);
+            ">Bus Drop Place</label>
+            <br>
+            <input name="busdropplace" required type="text" placeholder="Enter Drop Place" style="
+            border:none;
+            outline:0;
+            width:80%;
+            padding-left:10px;
+            margin-top:2px;
+            border-radius:3px;
+            height: 30px;
+            margin-left: 45px;
+            color: rgba(0, 0, 0, 0.642)">
+            <br>
+            <br>
+            <label id="label-mob-number" style="margin-left:46px ;
+            color: rgba(0, 0, 0, 0.642);
+            ">Bus Drop Time</label>
+            <br>
+            <input name="busdroptime" required type="time"  style="
+            border:none;
+            outline:0;
+            width:80%;
+            padding-left:10px;
+            margin-top:2px;
+            border-radius:3px;
+            height: 30px;
+            margin-left: 45px;
+            color: rgba(0, 0, 0, 0.642)">
+            <br>
+            <br>
+            <label id="label-mob-number" style="margin-left:46px ;
+            color: rgba(0, 0, 0, 0.642);
+            ">Bus Available Seats</label>
+            <br>
+            <input name="busseats" required type="number"  style="
+            border:none;
+            outline:0;
+            width:80%;
+            padding-left:10px;
+            margin-top:2px;
+            border-radius:3px;
+            height: 30px;
+            margin-left: 45px;
+            color: rgba(0, 0, 0, 0.642)">
+               <br>
+               <br>
+
+               {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% set category, message = messages[0] %}
+                    <label style="padding-left: 10px; color:red; background-color:#ffffffac;">{{ message }}</label>
+                {% endif %}
+                   {% endwith %}
+
+            <button type="submit" class="login-button" id="button" style="margin-left: 49px;
+            width: 80%;
+            margin-top:30px; 
+            height: 30px; 
+            border-radius: 20px;
+            
+            border:none; ">Continue</button>
+           
+            <br>
+            <br>
+            <br>
+        </div>
+
+            </form>
+            
+        </div>
+    </div>
+</body>
+</html>

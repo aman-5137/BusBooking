@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="selected_bus.css"> -->
+
+
+    <style>
+        /* Chrome, Safari, Edge, Opera */
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+        
+        /* Firefox */
+        input[type=number] {
+          -moz-appearance: textfield;
+        }
+
+
+
+
+
+        body{
+            font-family: 'Lato', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            align-items: center;
+            background: url(static/image/2_buses_home.jpg);
+            background-repeat: no-repeat;
+            background-size: 100%;
+            background-color: #baadefa9;
+            overflow: hidden;
+            
+        }
+        
+        
+        ul {
+            width: 96%;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            border-radius: 8px;
+            background-color: #836fd3;
+          }
+          
+          li {
+            float: left;
+          }
+          
+          li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+          }
+          
+          li a:hover {
+            background-color: #ffffff8f;
+          }
+          li a:active{
+            opacity: 0.5;
+          }
+        
+        
+        .main-div{
+            padding: 5px;
+            display: flex;
+            background-color: #baadefa9;
+            width: 95%;
+            height: 90%;
+            border-radius: 20px;
+            margin-top: 10px;
+        }
+        .panel1{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px;
+            border-radius: 20px;
+            margin: 10px;
+            width: 500px;
+            height: 480px;
+            background-color: #baadefc5;
+        }
+        #div1-p1{
+            display: flex;
+            flex-direction: column;
+            margin-top: 10px;
+            border-radius: 20px;
+            padding: 20px;
+            width: 90%;
+            height: 450px;
+            background-color: #ffffff;
+        }
+        #lb1-d1{
+            font-family:'Lato', sans-serif ;
+            font-size: large;
+            font-weight: bold;
+            color: #020202a0;
+        }
+        #lb2-d1{
+            font-family: 'Lato', sans-serif;
+            font-size: small;
+            font-weight: bold;
+            padding-left: 20px;
+        }
+        #lb3-d1{
+            font-family: 'Lato', sans-serif;
+            font-size: small;
+            margin-left:20px ;
+            color: #020202a0;
+        }
+        #div-d3{
+        display: flex;
+        
+        }
+        #div-d5{
+            width: 100%;
+            height: 120px;
+            display: flex;
+            flex-direction: column;
+            
+        }
+        #d5-lb1{
+            font-family: 'Lato', sans-serif;
+            font-weight: 700;
+            color: #020202a0;
+        }
+        #div-d6{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            
+        }
+        #d6-inp1{
+            width: 120px;
+            margin: 10px;
+            font-size: medium;
+            color: #020202a0;
+            font-weight: 600;
+            text-align: center;
+            height: 30px;
+            border-radius: 8px;
+            box-sizing: border-box;
+            border: 2px solid #836fd3;
+            outline: none;
+            
+        }
+        
+        #btn-p1-selctedbus{
+           
+            width: 80%;
+            height: 30px;
+            border-radius: 20px;
+            border: none;
+            color: #836fd3;
+        
+        }
+        #btn-p1-selctedbus:hover{
+            opacity: 0.8;
+        }
+        #btn-p1-selctedbus:active{
+            color:white;
+            background-color: #836fd3;
+            opacity: 1;
+        }
+        
+        
+        
+        #div2-p1{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 10px;
+            border-radius: 20px;
+            width: 90%;
+            height: 140px;
+            background-color: #ffffff85;
+        }
+        
+        .panel2{
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            border-radius: 20px;
+            margin: 10px;
+            background-color: #baadefc5;
+            width: 500px;
+            height: 500px;
+        }
+        #suggestions{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+        }
+        #available-bus{
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            width: 90%;
+            height: 50px;
+            background-color: #836fd3;
+            color: white;
+            border-radius: 20px;
+            margin-top: 20px;
+            padding: 10px;
+            font-family:'Lato', sans-serif;
+            font-weight: bolder;
+        }
+        #heading-av1{
+            display: flex;
+            justify-content: center;
+            padding-top: 10px;
+        }
+        
+        #fontss{
+            font-family: 'Lato', sans-serif;
+            padding-left: 5px;
+            font-weight: lighter;
+        }
+        #av1-ft{
+            
+            display: flex;
+            padding-left: 20px;
+            padding-bottom: 5px;
+            font-size: small;
+        }
+        
+        
+        #sgs::-webkit-scrollbar {
+            display: none;
+        }
+        #sgs{
+            margin: 10px;
+            height: 80%;
+            border-radius: 20px;
+            overflow: auto;
+        }
+        
+        #sg{
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            width: 420px;
+            height: 80px;
+            background-color: white;
+            margin: 10px;
+            border-radius: 20px;
+        }
+        #sg:active{
+            opacity: 0.5;
+        }
+        
+        #h4-busname{
+            display: flex;
+            font-family: 'Lato', sans-serif;
+            margin: 7px;
+            margin-bottom: 0;
+            margin-left:20px ;
+            font-weight: bold;
+            color: #020202a0;
+        }
+        #lb-sg1{
+            display: flex;    
+            padding: 10px;
+            font-size: small;
+            color: #020202a0;
+        }
+        #non-ac-label{
+            padding-left: 40px;
+            margin-top: 10px;
+        }
+        #time{
+            font-weight: bold;
+            font-size: small;
+            padding-left:40px;
+            margin-top: -15px;
+        }
+        #btn-p2{
+            background: none;
+            border: none;
+            color: transparent;
+        }
+        
+        
+
+    </style>
+
+
+    <title>Selected Bus</title>
+<body>
+    <div>
+    <ul>
+        <li><a href="/raindeer-home">Home</a></li>
+        <li><a href="/booking">Bookings</a></li>
+        <li><a href="/about">About</a></li>
+        <li  style="float:right"><a  href="/profile">Profile</a></li>
+      </ul>
+    <div class="main-div">
+        <div class="panel1">
+            <div id="div1-p1">
+                <div id="div-d1">
+                    <label id="lb1-d1" for="">{{data[1]}}</label>
+                    <br>
+                    <label id="lb2-d1" for="">Pickup Address:</label>
+                    <br>
+                    <label id="lb3-d1" for="">{{data[4]}}</label>
+
+                </div>
+                <br>
+                <div id="div-d2">
+                    <label id="lb2-d1" for="">Drop Address:</label>
+                    <br>
+                    <label id="lb3-d1">{{data[5]}}</label>
+
+                </div>
+                <br>
+                <div id="div-d3">
+                    <div><label id="lb2-d1">Pickup Time:</label>
+                    <br>
+                    <label id="lb3-d1">{{data[6]}}</label>
+                </div>
+                    <div><label id="lb2-d1">Drop Time:</label>
+                    <br>
+                    <label id="lb3-d1">{{data[7]}}</label>
+                </div>
+                    
+
+                </div>
+                <br>
+                <div id="div-d4">
+                    <label id="lb2-d1">Bus Type:</label>
+                    <br>
+                    <label id="lb3-d1">{{data[2]}} Seater/Sleeper</label>
+
+                </div>
+                <br>
+                <div id="div-d2">
+                    <label id="lb2-d1">Description:</label>
+                    <br><div style="display: flex;">
+                    <label id="lb3-d1">These buses are designed for short intercity runs, and have high-back seats, luggage compartments, and racks.</label>
+                </div>
+                <br>
+
+
+
+
+                    <form action="/confirm-booking" method="POST">
+                <div id="div-d5">
+                    <label id="d5-lb1" for="">Select Number of Seats:</label>
+                    <div id="div-d6">
+                    <input name="book_seats" id="d6-inp1" type="number" placeholder="Add Seats" value="{{seats}}">
+                    <label id="lb3-d1"> Available Seats: {{data[8]}}</label>
+                        {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% set category, message = messages[0] %}
+                    <label style="padding-left: 10px; color:red; background-color:#ffffffac;">{{ message }}</label>
+                {% endif %}
+                   {% endwith %}
+
+
+                        <input type="hidden" name = "data" value="{{data}}">
+                        <input type="hidden" name = "lists" value="{{lists}}">
+                        <input type="hidden" name="source" value="{{source}}">
+                        <input type="hidden" name="destination" value="{{destination}}">
+                        <input type="hidden" name="bfare" value="{{bfare}}">
+                        <input type="hidden" name="availableSeats" value="{{data[8]}}">
+                        <input type="hidden" name="dlists" value="{{dlists}}">
+
+
+                    <button type="submit" id="btn-p1-selctedbus" >Book Seats</button>
+                </div>
+                </div>
+                        </form>
+
+                </div>
+                <!-- ................................ -->
+                
+            </div>
+
+        </div>
+
+        <div class="panel2">
+            <div id="suggestions">
+                <div id="available-bus">
+                    <div id="heading-av1">Available Buses:</div>
+
+                    <div id="av1-ft">From: <label id="fontss">{{source}}</label></div>
+
+                    <div id="av1-ft"> To: <label id="fontss">{{destination}}</label></div>
+
+                </div>
+
+            <div id="sgs">
+
+                {% for data in lists %}
+                <!--  -->
+                <form action="/selected-bus" method="POST" >
+
+                    <input name="bus_id" type="hidden" value="{{data[0]}}">
+                    <input type="hidden" name="fare" value="{{data[3]}}">
+                    <input type="hidden" name="data" value="{{lists}}">
+                    <input type="hidden" name="bus_source" value="{{source}}">
+                    <input type="hidden" name="bus_destination" value="{{destination}}">
+
+
+
+                    <div id="sg">
+                    <label id="h4-busname">{{data[1]}}</label>
+
+                <div id="lb-sg1">
+                    <div>
+                    <label id="non-ac-label"> {{data[2]}} Seater</label>
+                    <br>
+                    <label id="time">{{data[6]}} - {{data[7]}}</label>
+                </div>
+                <div style="padding-left: 60px; margin-top:-10px;">
+                    <img src="static\image\rs.png" style="width:24px; height:24px;">
+                    <label style="font-weight: bold; font-size:24px;">{{data[3]}}</label>
+                    <button id="btn-p2" type="submit">
+                    <img src="static\image\add.png" style="width:40px; height:40px; margin-left:55px; margin-top:-10px;">
+                    </button>
+                    <br>
+                    <label for="">Available Seats: {{data[8]}}</label>
+                </div>
+                </div>
+                </div>
+
+                </form>
+            {% endfor %}
+
+
+
+            </div>
+
+        </div>
+    </div>
+</div>
+    
+</body>
+</html>

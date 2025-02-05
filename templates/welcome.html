@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Application Start Page</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #836fd3, #ffffff8f);
+      color: white;
+      text-align: center;
+      background: url(static/image/2_buses_home.jpg);
+        background-repeat: no-repeat;
+        background-size: 100%;
+    }
+
+    .container {
+      max-width: 600px;
+      padding: 20px;
+      background:#836fd31d;
+      border-radius: 15px;
+      backdrop-filter: blur(2px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      line-height: 1.5;
+    }
+
+    .start-button {
+      display: inline-block;
+      padding: 15px 30px;
+      background: #fff;
+      color:#836fd3;
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .start-button:hover {
+      background: #fff;
+      color: #836fd3a6;
+      transform: scale(1.1);
+    }
+    .start-button:active{
+        opacity: 0.2;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>BUS RESERVATION SYSTEM</h1>
+    <hr style="margin:10px">
+    <a href="login" class="start-button">Get Started</a>
+  </div>
+</body>
+</html>

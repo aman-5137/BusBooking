@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <!-- <link rel="stylesheet" href="home.css"> -->
+
+<style>
+    body{
+        font-family: 'Lato', sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        align-items: center;
+        background: url(static/image/2_buses_home.jpg);
+        backdrop-filter: blur(4px);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-color: #baadefa9;
+        overflow: hidden;
+        
+    }
+    
+    
+    ul {
+        width: 96%;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        border-radius: 8px;
+        background-color: #836fd3;
+      }
+      
+      li {
+        float: left;
+      }
+      
+      li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+      
+      li a:hover {
+        background-color: #ffffff8f;
+      }
+      li a:active{
+        opacity: 0.5;
+      }
+    
+    
+    .main-div{
+        padding: 5px;
+        display: flex;
+        background-color: #baadefa9;
+        width: 95%;
+        height: 90%;
+        border-radius: 20px;
+        margin-top: 10px;
+    }
+    .panel1{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+        border-radius: 20px;
+        margin: 10px;
+        width: 500px;
+        height: 480px;
+        background-color: #baadefc5;
+    }
+    #div1-p1{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 10px;
+        padding-top:40px ;
+        border-radius: 20px;
+        width: 450px;
+        height: 250px;
+        background-color: #ffffff85;
+    }
+    #lb-p1{
+        font-family: 'Lato', sans-serif;
+        color: #836fd3;
+        border-radius: 20px;
+        display: flex;
+        box-shadow: 1px 1px 1px #836fd3;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        width: 170px;
+        height: 25px;
+        margin-bottom: -20px;
+        z-index: 1;
+    }
+    #input-p1{
+        width: 350px;
+        height: 40px;
+        border: none;
+        outline: 0;
+        border-radius: 8px;
+        padding: 20px;
+    }
+    .p1-radio-btns{
+        display: flex;
+        margin: 5px;
+    }
+    #p1-radio{
+        display: flex;
+        align-items: center;
+        font-size: small;
+        font-family: 'Lato', sans-serif;
+        box-shadow: 2px 2px 2px #836fd3;
+        color: #836fd3;
+        width: 100px;
+        height: 25px;
+        margin: 5px;
+        border-radius: 20px;
+    }
+    #lb-radio{
+        margin-top: 5px;
+        margin-left: 5px;
+    }
+
+    #btn-p1{
+        margin-top:-10px ;
+        width: 80%;
+        height: 30px;
+        border: none;
+        border-radius: 20px;
+        background-color: #836fd3;
+        color: white;
+    
+    }
+    #btn-p1:hover{
+        opacity: 0.6;
+    }
+    #btn-p1:active{
+        background-color: white;
+        color: #836fd3;
+    }
+    
+    #div2-p1{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 10px;
+        border-radius: 20px;
+        width: 450px;
+        height: 140px;
+        background-color: #ffffff85;
+    }
+    
+    .panel2{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        border-radius: 20px;
+        margin: 10px;
+        background-color: #baadefc5;
+        width: 500px;
+        height: 500px;
+    }
+    #suggestions{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+    }
+    #travel-around-world{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+        height: 50px;
+        background-color: #836fd3;
+        color: white;
+        border-radius: 20px;
+        margin: 10px;
+        font-family:'Lato', sans-serif;
+        font-weight: bolder;
+    }
+    #sgs::-webkit-scrollbar {
+        display: none;
+    }
+    #sgs{
+        height: 80%;
+        border-radius: 20px;
+        overflow: auto;
+    }
+    
+    #sg{
+        cursor: pointer;
+        display: flex;
+        width: 420px;
+        height: 160px;
+        background-color: white;
+        margin: 10px;
+        border-radius: 20px;
+    }
+    #sg:active{
+        opacity: 0.5;
+    }
+    #img1{
+        margin: 5px;
+        width: 150px;
+        height: 150px;
+    }
+    #info-sg{
+        padding: 10px;
+        width: 80%;
+        height: 100%;
+        text-align: justify;
+        text-justify: inter-word;
+        
+    }
+    #place{
+        font-family: 'Lato', sans-serif;
+        font-weight: bold;
+        color: rgba(0, 0, 0, 0.678);
+    }
+    #description{
+        font-size: smaller;
+        font-stretch:ultra-condensed;
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        word-spacing: -1px;
+        line-height: 15px;
+    }
+</style>
+</head>
+<body>
+    <div>
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="/booking">Bookings</a></li>
+        <li><a href="/about">About</a></li>
+        <li  style="float:right"><a  href="/profile">Profile</a></li>
+      </ul>
+    <div class="main-div">
+        <div class="panel1">
+
+<!--            ------------------------------------------------------------->
+            <form action="/raindeer-hm" method="POST">
+            <div id="div1-p1">
+                <label  id="lb-p1" for="">From</label>
+                <br>
+                <input required name="source" id="input-p1" type="search" placeholder="From">
+                <br>
+                <label id="lb-p1" for="">To</label>
+                <br>
+                <input required name="destination" id="input-p1" type="search" placeholder="To">
+
+                <div class="p1-radio-btns">
+                    <div id="p1-radio">
+                        <input required name="day" type="radio" value="1">
+                        <br>
+                        <label id="lb-radio" for="">Today</label>
+                    </div>
+                    
+                    <div id="p1-radio">
+                        <input required name="day" type="radio" value="2">
+                        <br>
+                        <label id="lb-radio" for="">Tomorrow</label>
+                    </div> 
+
+                    <div id="p1-radio">
+                        <input required name="day" type="radio" value="3">
+                        <br>
+                        <label id="lb-radio" for="">Day After</label>
+                    </div> 
+                </div>
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% set category, message = messages[0] %}
+                    <label style="padding-left: 10px; color:red; background-color:#ffffffac;">{{ message }}</label>
+                {% endif %}
+                   {% endwith %}
+                <br>
+                <button type="submit" id="btn-p1">Find Bus</button>
+
+            </div>
+            </form>
+
+<!--            -------------------------------------------------->
+
+
+            <div id="div2-p1">
+                <img src="static\image\offer.png" style=" width: 100%; height: 100%;object-fit: cover; border-radius: 20px">
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+        <div class="panel2">
+            <div id="suggestions">
+                <div id="travel-around-world">
+                    Travel Around World
+                </div>
+
+
+
+
+            <div id="sgs">
+                <div id="sg">
+                    <div id="img1"><img src="static\image\tajmahal.jpg" style="width: 100%; height:100%; object-fit:cover; border-radius: 20px;" >
+                    </div>
+                    <div id="info-sg">
+                        <label id="place">
+                            THE TAJ MAHAL
+                        </label>
+                        <br>
+                        <p id="description">
+                            The Taj Mahal is an ivory-white marble mausoleum on the south bank of the Yamuna river in the Indian city of Agra. It was commissioned in 1632 by the Mughal emperor, Shah Jahan (reigned from 1628 to 1658), to house the tomb of his favourite wife, Mumtaz Mahal.
+                        </p>
+                    </div>
+                </div>
+                <div id="sg">
+                    <div id="img1"><img src="static\image\tajmahal.jpg" style="width: 100%; height:100%; object-fit:cover; border-radius: 20px;" >
+                    </div>
+                    <div id="info-sg">
+                        <label id="place">
+                            THE TAJ MAHAL
+                        </label>
+                        <br>
+                        <p id="description">
+                            The Taj Mahal is an ivory-white marble mausoleum on the south bank of the Yamuna river in the Indian city of Agra. It was commissioned in 1632 by the Mughal emperor, Shah Jahan (reigned from 1628 to 1658), to house the tomb of his favourite wife, Mumtaz Mahal.
+                        </p>
+                    </div>
+                </div>
+                <div id="sg">
+                    <div id="img1"><img src="static\image\tajmahal.jpg" style="width: 100%; height:100%; object-fit:cover; border-radius: 20px;" >
+                    </div>
+                    <div id="info-sg">
+                        <label id="place">
+                            THE TAJ MAHAL
+                        </label>
+                        <br>
+                        <p id="description">
+                            The Taj Mahal is an ivory-white marble mausoleum on the south bank of the Yamuna river in the Indian city of Agra. It was commissioned in 1632 by the Mughal emperor, Shah Jahan (reigned from 1628 to 1658), to house the tomb of his favourite wife, Mumtaz Mahal.
+                        </p>
+                    </div>
+                </div>
+                <div id="sg">
+                    <div id="img1"><img src="static\image\tajmahal.jpg" style="width: 100%; height:100%; object-fit:cover; border-radius: 20px;" >
+                    </div>
+                    <div id="info-sg">
+                        <label id="place">
+                            THE TAJ MAHAL
+                        </label>
+                        <br>
+                        <p id="description">
+                            The Taj Mahal is an ivory-white marble mausoleum on the south bank of the Yamuna river in the Indian city of Agra. It was commissioned in 1632 by the Mughal emperor, Shah Jahan (reigned from 1628 to 1658), to house the tomb of his favourite wife, Mumtaz Mahal.
+                        </p>
+                    </div>
+                </div>
+                <div id="sg">
+                    <div id="img1"><img src="static\image\tajmahal.jpg" style="width: 100%; height:100%; object-fit:cover; border-radius: 20px;" >
+                    </div>
+                    <div id="info-sg">
+                        <label id="place">
+                            THE TAJ MAHAL
+                        </label>
+                        <br>
+                        <p id="description">
+                            The Taj Mahal is an ivory-white marble mausoleum on the south bank of the Yamuna river in the Indian city of Agra. It was commissioned in 1632 by the Mughal emperor, Shah Jahan (reigned from 1628 to 1658), to house the tomb of his favourite wife, Mumtaz Mahal.
+                        </p>
+                    </div>
+                </div>
+                
+            </div>
+            <!--  -->
+                            
+
+
+
+
+
+
+            </div>
+
+        </div>
+
+    </div>
+    </div>
+
+</body>
+</html>

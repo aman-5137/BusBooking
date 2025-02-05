@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <!-- <link rel="stylesheet" href="confirmbooking.css"> -->
+    <style>
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+
+
+        body{
+        font-family: 'Lato', sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        align-items: center;
+        background: url(static/image/2_buses_home.jpg);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-color: #baadefa9;
+        overflow: hidden;
+        
+    }
+    
+    
+    ul {
+        width: 96%;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        border-radius: 8px;
+        background-color: #836fd3;
+      }
+      
+      li {
+        float: left;
+      }
+      
+      li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+      
+      li a:hover {
+        background-color: #ffffff8f;
+      }
+      li a:active{
+        opacity: 0.5;
+      }
+    
+    
+    .main-div{
+        padding: 10px;
+        display: flex;
+        background-color: #baadefa9;
+        width: 95%;
+        height: 90%;
+        border-radius: 20px;
+        margin-top: 10px;
+    }
+    #div1{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 500px;
+        height: 480px;
+        border-radius: 20px;
+        margin: 5px;
+        padding: 10px;
+        background-color: #ffffff8f;
+    }
+    #panel-lb{
+        font-weight: bold;
+    }
+    
+    #passengers::-webkit-scrollbar {
+        display: none;
+    }
+    #passengers{
+    
+        overflow: auto;
+        min-width: 470px;
+        max-height: 440px;
+        border: 2px solid #836fd3;
+        border-radius: 20px;
+        margin-top: 10px;
+        padding: 4px;
+    }
+    #panel-p1{
+        padding: 20px;
+        background-color: white;
+        margin: 1px;
+        border-radius: 20px;
+        margin-bottom: 5px;
+    }
+    
+    #p1-lb1{
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: large;
+        font-weight: 600;
+        margin: 4px;
+        color: #836fd3;
+    }
+    #p1-lb2{
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        padding-left: 20px;
+        color:rgba(0, 0, 0, 0.696);
+    }
+    #p1-inp1{
+        margin: 4px;
+        margin-left: 16px;
+        border: 1px solid #836fd3;
+        padding-left: 5px;
+        border-radius: 4px;
+        outline: none;
+    }
+    #p1-rdo1{
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: medium;
+        font-weight:normal;
+        
+    }
+    
+    
+    #div2{
+        overflow: auto;
+        width: 500px;
+        height: 480px;
+        margin: 5px;
+        border-radius: 20px;
+        padding: 10px;
+        background-color: #ffffff8f;
+    }
+    #div2::-webkit-scrollbar {
+        display: none;
+    }
+    #btn-passenger{
+        border: 2px solid #836fd3;
+        outline: none;
+        margin: 5px;
+        border-radius: 20px;
+        width: 120px;
+        height: 30px;
+    }
+    #btn-passenger:hover{
+        opacity: 0.8;
+
+    }
+    #btn-passenger:active{
+        background-color: #836fd3;
+        color: white;
+    }
+    #p2-lb{
+        color: #836fd3;
+        font-weight: bold;
+        font-size: 24px;
+        padding-left:20px;
+    }
+    
+    #p2-detail-lb{
+        color: rgba(0, 0, 0, 0.767);
+        font-size: medium;
+        font-weight: bold;
+        padding-left: 35px;
+    
+    }
+    #p2-bus-name{
+        font-weight: bold;
+        font-size: small;
+        color: rgba(0, 0, 0, 0.699);
+        padding-left: 45px;
+    }
+    
+    #b-from-to-div{
+        display: flex;
+        padding: 15px;
+        
+    }
+    #b-from{
+        width: 75%;
+        padding-left: 45px;
+    
+    }
+    #b-place-lb{
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-weight: bold;
+        color: #000000ac;
+    }
+    #b-time-lb{
+        
+        font-size: smaller;
+        color:#000000ac;
+    }
+    #b-to{
+        width: 100%;
+        padding-left: 45px;
+    }
+    #p2-passengers{
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        padding-bottom: 5px;
+        padding-left: 45px;
+        padding-right: 45px;
+        font-size: small;
+        font-family: 'Lato', sans-serif;
+        color: #000000ac;
+    }
+    #p2-rs-lb{
+        font-family: monospace;
+        font-size: 24px;
+    
+    }
+    #p2-btn{
+        display: flex;
+        justify-content: center;
+    }
+    #p2-advertise{
+        width: 100%;
+        height: 50%;
+        background-color: #836fd3;
+        border-radius:20px;
+    }
+    #advtise-p2{
+        padding-left: 10px;
+        width: 200px;
+        background-color: #ffffff8f;
+        border-radius: 20px 0 ;
+    }</style>
+
+</head>
+<body>
+    <div>
+    <ul>
+        <li><a href="/raindeer-home">Home</a></li>
+        <li><a href="/booking">Bookings</a></li>
+        <li><a href="/about">About</a></li>
+        <li  style="float:right"><a  href="/profile">Profile</a></li>
+      </ul>
+    <div class="main-div">
+    <div id="div1">
+        <label id="panel-lb" for="">Add Passengers Detail</label>
+
+        <form action="/booking-detail" method="POST">
+            <input type="hidden" name="seats" value="{{ lists[1] }}">
+            <div id="passengers">
+
+                {% for i in range(lists[1]) %}
+                    <div id="panel-p1">
+                        <label id="p1-lb1">Passenger {{i+1}}:</label>
+                        <br>
+                        <label id="p1-lb2">Name:</label>
+                        <input required name="name_{{i}}" id="p1-inp1" type="text" placeholder="Name">
+                        <br>
+                        <label id="p1-lb2" for="">Gender:</label>
+                        <input required name="gender_{{i}}" type="radio" value="male"><label id="p1-rdo1">Male</label>
+                        <input required name="gender_{{i}}" type="radio" value="female"><label id="p1-rdo1">Female</label>
+                        <input required name="gender_{{i}}" type="radio" value="other"><label id="p1-rdo1">Other</label>
+                        <br>
+                        <label id="p1-lb2" for="">Age:</label>
+                        <input required name="age_{{i}}" id="p1-inp1" style="width: 40px;" type="number" placeholder="age">
+                    </div>
+                {% endfor %}
+
+                <div style="display: flex; justify-content:center;">
+                    <button id="btn-passenger">Confirm</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div id="div2">
+        <div style="background-color: white; border-radius:20px; margin:5px; padding-top:10px">
+            <div id="p2-lb">Confirm Booking</div>
+
+            <label id="p2-detail-lb" for="">Details:</label>
+            <br>
+            <label id="p2-bus-name">{{ bus_details[1] }}</label>
+            <br>
+            <div id="b-from-to-div">
+                <div id="b-from">
+                    <label id="b-place-lb" for="">{{ bus_details[4] }}</label>
+                    <br>
+                    <label id="b-time-lb" for="">{{ bus_details[6] }}</label>
+                </div>
+                <div><label for="">➡️</label></div>
+                <div id="b-to">
+                    <label id="b-place-lb" for="">{{ bus_details[5] }}</label>
+                    <br>
+                    <label id="b-time-lb" for="">{{ bus_details[7] }}</label>
+                </div>
+            </div>
+
+            <div style="margin: 10px; margin-left:0px;">
+                <label id="p2-detail-lb">Passengers:</label>
+
+                {% if not passenger_data %}
+                    <div id="p2-passengers">
+                        <label for="">None! Please fill the passengers detail.</label>
+                    </div>
+                {% else %}
+                    {% for data in passenger_data %}
+                        <div id="p2-passengers">
+                            <label for="">Name: {{ data[0] }}</label>
+                            <label for="">Age: {{ data[1] }}</label>
+                            <label for="">Gender: {{ data[2] }}</label>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+            <div><label id="p2-detail-lb" for="">Total Fare:</label>
+            <br>
+            <div style="display:flex; align-items: center;">
+                <img src="static\image\rs.png" style="width: 24px; height:24px; object-fit:cover; margin:10px; padding-left: 80px">
+                <label id="p2-rs-lb" for="">{{ bus_details[3] }}</label>
+                <label id="p2-passengers" style="padding-left: 10px;" for="">+ No Tax Included</label>
+            </div>
+            </div>
+            <div id="p2-btn">
+                <form action="/congrats">
+                    <input type="hidden" name="result" value="hidden">
+                <button type="submit" id="btn-passenger">Confirm & Pay</button>
+                    </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    
+</body>
+</html>

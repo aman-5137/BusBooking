@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Login Page</title>
+    <style>
+
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+
+
+        input[type=number] {
+          -moz-appearance: textfield;
+        }
+
+        body{
+            color: white;
+            font-family: 'Lato', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: url(static/image/1_bus_main.jpg);
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+        #label-mob-number{
+            font-size: medium;
+        }
+        #signup-label{
+            text-decoration: underline;
+        }
+        #signup-label:hover{
+            color: blue;
+            font-style: oblique;
+        }
+        #signup-label:active{
+            color: white;
+        }
+        
+           .main {
+            margin-top: 500px;
+            position: absolute;
+            width: 500px;
+            height: 400px;
+            background-color:#836fd3 ;
+            border-radius: 20px;
+        
+           }
+        #label-login{
+            font-style:normal;
+            font-weight: 600;
+            color: #0a040476;
+        }
+        
+        .div1{
+            justify-content: center;
+            display: flex;
+            background-color: #836fd3;
+            padding: 10px;
+            border-top-right-radius: 20px;
+            border-top-left-radius: 20px;
+        
+        }
+        
+        .strip-div{
+            justify-content: center;
+            display:flex;
+            box-shadow: 0px 0px 2px ;
+            margin-top: 20px;
+            width: 400px;
+            height: 30px;
+            background-color: aliceblue;
+            border-radius: 20px;
+        }
+        .label-input-div{
+            margin-top: 45px;
+        }
+        #more-signin-label{
+            color: #ffffffb5;
+            font-size: small;
+            
+        
+        }
+        .more-signin-div{
+            justify-content: center;
+            display: flex;
+            
+        
+        }
+        #button:hover{
+            background-color: #d9d3f0;
+        }
+        #button:active{
+            background-color: #baadefa9;
+            color: white;
+        }
+        
+        
+        
+
+    </style>
+    <script>
+        // Function to show a popup alert with the flashed message
+        function showError(message) {
+            if (message) {
+                alert(message);
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="main">
+        
+        <div class ="div1">
+            <div class="strip-div">
+                <label id="label-login" style="margin-top: 8px;
+                ">LOGIN</label>
+            </div>
+            
+        </div>
+            <div style="justify-content: center;
+            display:flex;
+            ">
+                <a href="signup"><label  id="signup-label" style="
+                color:white;
+                font-size:x-small;
+                margin-left:300px;">or SIGN-UP here</label></a>
+            </div>
+
+           <div class="label-input-div">
+               <form action="/raindeer-lgn" method="POST">
+            <label id="label-mob-number" style="margin-left:46px ;
+            color: rgb(255, 255, 255);
+            ">Mobile Number</label>
+                   {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% set category, message = messages[0] %}
+                    <label style="padding-left: 10px; color:red; background-color:#ffffffac;">{{ message }}</label>
+                {% endif %}
+                   {% endwith %}
+            <br>
+            <input required name="userphno" type="number" placeholder="Enter Mobile Number" style="
+            border:none;
+            outline:0;
+            width:80%;
+            padding-left:10px;
+            margin-top:2px;
+            border-radius:3px;
+            height: 30px;
+            margin-left: 45px;
+            color: rgba(0, 0, 0, 0.642)">
+            <br>
+            <br>
+            <label id="label-mob-number" style="margin-left:46px ;
+            color: rgb(255, 255, 255);
+            ">Password</label>
+            <br>
+            <input required name="password" type="password" placeholder="Enter Password" style="
+            border:none;
+            outline:0;
+            width:80%;
+            padding-left:10px;
+            margin-top:2px;
+            border-radius:3px;
+            height: 30px;
+            margin-left: 45px;
+            color: rgba(0, 0, 0, 0.642)">
+            <br>
+            <button type="submit" class="login-button" id="button"  style="margin-left: 49px;
+            width: 80%;
+            margin-top:30px; 
+            height: 30px; 
+            border-radius: 20px;
+            
+            border:none; ">Continue</button>
+                </form>
+            <br>
+            <hr style="width: 80%;">
+            <br>
+            <div class="more-signin-div">
+                <div>
+            <label id="more-signin-label" for="">Or LOGIN/SIGNUP with</label>
+        </div>
+            <div>
+            <img src="static/image/google.png"
+            style="width: 20px;
+                    height:20px;
+                    padding-left:10px;
+                    ">
+            </div>
+            </div>
+        </div>
+
+            
+        </div>
+
+
+</body>
+</html>

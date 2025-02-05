@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookings</title>
+    <!-- <link rel="stylesheet" href="bookings.css"> -->
+    <style> 
+           body{
+        font-family: 'Lato', sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        align-items: center;
+        background: url(static/image/2_buses_home.jpg);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-color: #baadefa9;
+        overflow: hidden;
+        
+    }
+    
+    
+    ul {
+        width: 96%;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        border-radius: 8px;
+        background-color: #836fd3;
+      }
+      
+      li {
+        float: left;
+      }
+      
+      li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+      
+      li a:hover {
+        background-color: #ffffff8f;
+      }
+      li a:active{
+        opacity: 0.5;
+      }
+    
+    
+    .main-div{
+        padding: 5px;
+        display: flex;
+        background-color: #baadefa9;
+        width: 95%;
+        height: 90%;
+        border-radius: 20px;
+        margin-top: 10px;
+    }
+    .panel1{
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        border-radius: 20px;
+        margin: 10px;
+        width: 500px;
+        height: 480px;
+        background-color: #ffffff8f;
+    }
+#p1-lb1{
+    color: #836fd3;
+    font-size: 24px;
+    font-weight: bold;
+
+}
+#p1-booked{
+    overflow: auto;
+    height: 90%;
+    padding: 5px;
+    border-radius: 20px;
+    border: 2px solid #836fd3;
+}
+
+#p1-booked::-webkit-scrollbar {
+    display: none;
+}
+
+#p1-booked-div{
+    background-color: white;
+    padding: 15px;
+    border-radius: 20px;
+    margin-bottom: 5px;
+
+}
+#p1-div-lb1{
+    font-size: 18px;
+    font-weight: bold;
+    color: #000000ac;
+
+}
+#p1-from-to{
+    margin: 5px;
+    color: #000000ac;
+    display: flex;
+    font-size: small;
+
+}
+#p1-from-div1{
+    width: 75%;
+    padding-left: 20px;
+}
+#p1-to-div1{
+    width: 100%;
+    padding-left:20px ;
+}
+#p1-div2{
+    padding-left: 20px;
+    font-size: small;
+}
+#div3-btn{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+    margin-bottom: -5px;
+}
+#btn{
+    border: 2px solid #836fd3;
+    border-radius: 20px;
+    width: 80px;
+    margin-top: 5px;
+
+}
+#btn:hover{
+    opacity: 0.7;
+}
+#btn:active{
+    background-color: #836fd3;
+    color: white;
+}
+    
+    .panel2{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        border-radius: 20px;
+        margin: 10px;
+        padding: 10px;
+        background-color:#ffffff8f;
+        width: 500px;
+        height: 480px;
+    }
+    
+</style>
+
+</head>
+<body>
+    <div>
+    <ul>
+        <li><a href="/raindeer-home">Home</a></li>
+        <li><a href="/booking">Bookings</a></li>
+        <li><a href="/about">About</a></li>
+        <li  style="float:right"><a  href="/profile">Profile</a></li>
+      </ul>
+    <div class="main-div">
+        <div class="panel1">
+            <label id="p1-lb1" for="">Confirmed Bookings</label>
+            <!-- B -->
+            <div id="p1-booked">
+            <!-- C -->
+
+                {% for data in result %}
+                <div id="p1-booked-div">
+                <label id="p1-div-lb1" for="">{{data[1]}}</label>
+                <label for="">{{data[0]}}</label>
+                <br>
+                <!-- A -->
+            <div id="p1-from-to">
+                <div id="p1-from-div1"><label for="">{{data[2]}}</label><br>
+                <label for="">{{data[3]}}</label></div>
+                <div><label for="">To</label></div>
+                <div id="p1-to-div1"><label for="">{{data[4]}}</label><br>
+                <label for="">{{data[5]}}</label></div>
+            </div>
+                <!-- A -->
+                <div id="p1-div2">
+                    <label style="font-weight: bold; color:#000000ac" for="">Total Passengers:</label>
+                    <label for="">{{data[6]}}</label>
+                </div>
+
+                <div id="div3-btn">
+                    <hr width="80%" style="color: black;">
+                    <form action="/raindeer-bookings" method="POST">
+                    <input type="hidden" name="booking" value="{{data[7]}}">
+                    <button type="submit" id="btn">Cancel</button>
+                    </form>
+                </div>
+            </div>
+                {% endfor %}
+
+            <!-- C -->
+            </div>
+            <!-- B -->
+            
+
+        </div>
+        <div class="panel2">
+            <label id="p1-lb1" for="">Cancelled Bookings</label>
+            <!-- B -->
+            <div id="p1-booked">
+
+
+            <!-- C -->
+                {% for data in result2 %}
+                <div id="p1-booked-div">
+                <label id="p1-div-lb1" for="">{{data[1]}}</label>
+                <label for="">{{data[0]}}</label>
+                <br>
+                <!-- A -->
+            <div id="p1-from-to">
+                <div id="p1-from-div1"><label for="">{{data[2]}}</label><br>
+                <label for="">{{data[3]}}</label></div>
+                <div><label for="">To</label></div>
+                <div id="p1-to-div1"><label for="">{{data[4]}}</label><br>
+                <label for="">{{data[5]}}</label></div>
+            </div>
+                <!-- A -->
+                <div id="p1-div2">
+                    <label style="font-weight: bold; color:#000000ac" for="">Total Passengers:</label>
+                    <label for="">{{data[6]}}</label>
+                </div>
+
+                <div id="div3-btn">
+                    <hr width="80%" style="color: black;">
+                    <label style="font-size: 12px;" for="">Your money will be transfered to your account in 2-3 working days.</label>
+                </div>
+            </div>
+                {% endfor %}
+
+
+
+
+             
+            </div>
+            <!-- B -->
+
+        </div>
+    </div>
+</div>
+    
+</body>
+</html>

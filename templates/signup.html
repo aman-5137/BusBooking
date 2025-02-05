@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-up Page</title>
+    <style>
+
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+
+
+        input[type=number] {
+          -moz-appearance: textfield;
+        }
+
+
+        body{
+            font-family: 'Lato', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: url(static/image/1_bus_main.jpg);
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+        #label-mob-number{
+            font-size: medium;
+        }
+        #signup-label{
+            text-decoration: underline;
+        }
+        #signup-label:hover{
+            color: rgb(255, 255, 255);
+            font-style: oblique;
+        }
+        #signup-label:active{
+            color: rgb(0, 0, 0);
+        }
+        
+           .main {
+            margin-top: 600px;
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background-color:#836fd3 ;
+            border-radius: 20px;
+        
+           }
+        #label-login{
+            font-style:normal;
+            font-weight: 600;
+            color: #0a040476;
+        }
+        
+        .div1{
+            justify-content: center;
+            display: flex;
+            background-color: #836fd3;
+            padding: 10px;
+            border-top-right-radius: 20px;
+            border-top-left-radius: 20px;
+        
+        }
+        
+        .strip-div{
+            justify-content: center;
+            display:flex;
+            box-shadow: 0px 0px 2px ;
+            margin-top: 20px;
+            width: 400px;
+            height: 30px;
+            background-color: aliceblue;
+            border-radius: 20px;
+        }
+        .label-input-div{
+            margin-top: 45px;
+        }
+        #more-signin-label{
+            color: #ffffffb5;
+            font-size: small;
+            
+        
+        }
+        .more-signin-div{
+            justify-content: center;
+            display: flex;
+            
+        
+        }
+        #button:hover{
+            background-color: #d9d3f0;
+        }
+        #button:active{
+            background-color: #baadefa9;
+            color: white;
+        }
+        
+        
+        
+    </style>
+</head>
+<body>
+    <div class="main">
+        
+        <div class ="div1">
+            <div class="strip-div">
+                <label id="label-login" style="margin-top: 8px;
+                ">SIGN-UP</label>
+            </div>
+            
+        </div>
+            <div style="justify-content: center;
+            display:flex;
+            ">
+                <a href="login"><label id="signup-label" style="font-size:x-small;
+                margin-left:300px; color:white;">or Log-in here</label> </a>
+            </div>
+
+
+        <form action="/raindeer-sgnp" method="POST">
+       
+           <div class="label-input-div">
+            <label id="label-mob-number" style="margin-left:46px ;
+            color: rgb(255, 255, 255);
+            ">User Name</label>
+            <br>
+            <input required name="name" type="text" placeholder="Enter Your Name" style="
+            border:none;
+            outline:0;
+            width:80%;
+            padding-left:10px;
+            margin-top:2px;
+            border-radius:3px;
+            height: 30px;
+            margin-left: 45px;
+            color: rgba(0, 0, 0, 0.642)">
+            <br>
+            <br>
+            <label id="label-mob-number" style="margin-left:46px ;
+            color: rgb(255, 255, 255);
+            ">Mobile Number</label>
+            <br>
+            <input required name="user_phno" type="number" placeholder="Enter Mobile Number" style="
+            border:none;
+            outline:0;
+            width:80%;
+            padding-left:10px;
+            margin-top:2px;
+            border-radius:3px;
+            height: 30px;
+            margin-left: 45px;
+            color: rgba(0, 0, 0, 0.642)">
+            <br>
+            <br>
+            <label id="label-mob-number" style="margin-left:46px ;
+            color: rgb(255, 255, 255);
+            ">Password</label>
+            <br>
+            <input required name="password" type="password" placeholder="Enter Password" style="
+            border:none;
+            outline:0;
+            width:80%;
+            padding-left:10px;
+            margin-top:2px;
+            border-radius:3px;
+            height: 30px;
+            margin-left: 45px;
+            color: rgba(0, 0, 0, 0.642)">
+            <br>
+               {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% set category, message = messages[0] %}
+                    <div style="width:100%; display:flex; justify-content: center;">
+                    <label id="label-mob-number" style=" margin-top: 5px; text-align:center; color:red; background-color:#ffffffac;">{{ message }}</label>
+                        </div>
+                {% endif %}
+                   {% endwith %}
+               <br>
+            <button type="submit" class="login-button" id="button" style="margin-left: 49px;
+            width: 80%;
+            margin-top:10px;
+            height: 30px; 
+            border-radius: 20px;
+            
+            border:none; ">Continue</button>
+           
+            <br>
+            <br>
+            <hr style="width: 80%;">
+            <br>
+            <div class="more-signin-div">
+                <div>
+            <label id="more-signin-label" for="">Or LOGIN/SIGNUP with</label>
+        </div>
+            <div>
+            <img src="static/image/google.png"
+            style="width: 20px;
+                    height:20px;
+                    padding-left:10px;
+                    padding-bottom:6px;
+                    ">
+            </div>
+            </div>
+        </div>
+            </form>
+
+
+
+
+
+    </div>
+</body>
+</html>
