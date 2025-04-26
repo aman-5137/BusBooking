@@ -4,8 +4,8 @@ import mysql.connector
 def connectionDB():
     mydb = mysql.connector.connect(
         host="localhost",
-        user="root",
-        password="Aman5137@",
+        user="user",
+        password="password",
         database="bus_reservation_system"
     )
     return mydb
